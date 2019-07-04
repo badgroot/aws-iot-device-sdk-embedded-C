@@ -1,0 +1,165 @@
+ASN.1 Write Octet String #0 (Empty string)
+0:hex:"":hex:"0400":int:2:int:2
+
+ASN.1 Write Octet String #1 (Large buffer)
+0:hex:"AABBCC":hex:"0403AABBCC":int:10:int:5
+
+ASN.1 Write Octet String #2 (Buffer just fits)
+0:hex:"AABBCC":hex:"0403AABBCC":int:5:int:5
+
+ASN.1 Write Octet String #3 (Buffer too small for tag)
+0:hex:"AABBCC":hex:"0403AABBCC":int:4:exp:0
+
+ASN.1 Write Octet String #4 (Buffer too small for len)
+0:hex:"AABBCC":hex:"0403AABBCC":int:3:exp:0
+
+ASN.1 Write Octet String #5 (Buffer too small for string)
+0:hex:"AABBCC":hex:"0403AABBCC":int:2:exp:0
+
+ASN.1 Write Octet String #6 (l = 128, large buffer)
+0:hex:"000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F":hex:"048180000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F":int:140:int:131
+
+ASN.1 Write Octet String #7 (l = 128, buffer just fits)
+0:hex:"000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F":hex:"048180000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F":int:131:int:131
+
+ASN.1 Write Octet String #8 (l = 128, buffer too small for tag)
+0:hex:"000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F":hex:"":int:130:exp:0
+
+ASN.1 Write Octet String #9 (l = 128, buffer too small for len)
+0:hex:"000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F":hex:"":int:129:exp:0
+
+ASN.1 Write Octet String #9 (l = 128, buffer too small for string)
+0:hex:"000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F":hex:"":int:127:exp:0
+
+ASN.1 Write IA5 String #0 (Empty string)
+1:char*:"":hex:"1600":int:2:int:2
+
+ASN.1 Write IA5 String #1 (Large buffer)
+1:char*:"ABC":hex:"1603414243":int:10:int:5
+
+ASN.1 Write IA5 String #2 (Buffer just fits)
+1:char*:"ABC":hex:"1603414243":int:5:int:5
+
+ASN.1 Write IA5 String #3 (Buffer too small for tag)
+1:char*:"ABC":hex:"":int:4:exp:0
+
+ASN.1 Write IA5 String #4 (Buffer too small for len)
+1:char*:"ABC":hex:"":int:3:exp:0
+
+ASN.1 Write IA5 String #5 (Buffer too small for string)
+1:char*:"ABC":hex:"":int:2:exp:0
+
+ASN.1 Write / Read Length #0 (Len = 0, short form)
+2:int:0:hex:"00":int:1:int:1
+
+ASN.1 Write / Read Length #1 (Len = 127, short form)
+2:int:127:hex:"7F":int:1:int:1
+
+ASN.1 Write / Read Length #2 (Len = 127, buffer too small)
+2:int:127:hex:"7F":int:0:exp:0
+
+ASN.1 Write / Read Length #3 (Len = 128, long form)
+2:int:128:hex:"8180":int:2:int:2
+
+ASN.1 Write / Read Length #4 (Len = 255, long form)
+2:int:255:hex:"81FF":int:2:int:2
+
+ASN.1 Write / Read Length #5 (Len = 255, buffer too small)
+2:int:255:hex:"81FF":int:1:exp:0
+
+ASN.1 Write / Read Length #6 (Len = 258, byte order)
+2:int:258:hex:"820102":int:3:int:3
+
+ASN.1 Write / Read Length #7 (Len = 65535, long form)
+2:int:65535:hex:"82FFFF":int:3:int:3
+
+ASN.1 Write / Read Length #8 (Len = 65535, buffer too small)
+2:int:65535:hex:"82FFFF":int:2:exp:0
+
+ASN.1 Write / Read Length #9 (Len = 66051, byte order)
+2:int:66051:hex:"83010203":int:4:int:4
+
+ASN.1 Write / Read Length #10 (Len = 16777215, long form)
+2:int:16777215:hex:"83FFFFFF":int:4:int:4
+
+ASN.1 Write / Read Length #11 (Len = 16777215, buffer too small)
+2:int:16777215:hex:"83FFFFFF":int:3:exp:0
+
+ASN.1 Write / Read Length #12 (Len = 16909060, byte order)
+2:int:16909060:hex:"8401020304":int:5:int:5
+
+ASN.1 Write / Read Length #12 (Len = 16909060, buffer too small)
+2:int:16909060:hex:"8401020304":int:4:exp:0
+
+ASN.1 Write Named Bitstring / Unused bits #0
+3:hex:"FF":int:8:hex:"030200FF":int:4:int:1
+
+ASN.1 Write Named Bitstring / Unused bits #1
+3:hex:"FE":int:8:hex:"030201FE":int:4:int:1
+
+ASN.1 Write Named Bitstring / Unused bits #2
+3:hex:"FC":int:7:hex:"030202FC":int:4:int:1
+
+ASN.1 Write Named Bitstring / Unused bits #3
+3:hex:"F8":int:8:hex:"030203F8":int:4:int:1
+
+ASN.1 Write Named Bitstring / Unused bits #4
+3:hex:"F0":int:6:hex:"030204F0":int:4:int:1
+
+ASN.1 Write Named Bitstring / Unused bits #5
+3:hex:"E0":int:6:hex:"030205E0":int:4:int:1
+
+ASN.1 Write Named Bitstring / Unused bits #6
+3:hex:"C0":int:8:hex:"030206C0":int:4:int:1
+
+ASN.1 Write Named Bitstring / Unused bits #7
+3:hex:"80":int:8:hex:"03020780":int:4:int:1
+
+ASN.1 Write Named Bitstring / Empty bitstring
+3:hex:"00":int:7:hex:"030100":int:3:int:1
+
+ASN.1 Write Named Bitstring / Empty bitstring (bits = 16)
+3:hex:"0000":int:16:hex:"030100":int:3:int:1
+
+ASN.1 Write Named Bitstring / Empty bitstring (bits = 24)
+3:hex:"FFFFFF":int:0:hex:"030100":int:3:int:1
+
+ASN.1 Write Named Bitstring / 15 trailing bits all unset
+3:hex:"F88000":int:24:hex:"030307F880":int:5:int:1
+
+ASN.1 Write Named Bitstring / 15 trailing bits all set
+3:hex:"F8FFFF":int:9:hex:"030307F880":int:5:int:1
+
+ASN.1 Write Bitstring / Unused bits #0
+3:hex:"FF":int:8:hex:"030200FF":int:4:int:0
+
+ASN.1 Write Bitstring / Unused bits #1
+3:hex:"FF":int:7:hex:"030201FE":int:4:int:0
+
+ASN.1 Write Bitstring / Unused bits #2
+3:hex:"FF":int:6:hex:"030202FC":int:4:int:0
+
+ASN.1 Write Bitstring / Unused bits #3
+3:hex:"FF":int:5:hex:"030203F8":int:4:int:0
+
+ASN.1 Write Bitstring / Unused bits #4
+3:hex:"FF":int:4:hex:"030204F0":int:4:int:0
+
+ASN.1 Write Bitstring / Unused bits #5
+3:hex:"FF":int:3:hex:"030205E0":int:4:int:0
+
+ASN.1 Write Bitstring / Unused bits #6
+3:hex:"FF":int:2:hex:"030206C0":int:4:int:0
+
+ASN.1 Write Bitstring / Unused bits #7
+3:hex:"FF":int:1:hex:"03020780":int:4:int:0
+
+ASN.1 Write Bitstring / 1 trailing bit (bits 15)
+3:hex:"0003":int:15:hex:"0303010002":int:5:int:0
+
+ASN.1 Write Bitstring / 0 bits
+3:hex:"":int:0:hex:"030100":int:3:int:0
+
+ASN.1 Write Bitstring / long string all bits unset except trailing bits
+3:hex:"000000000007":int:45:hex:"030703000000000000":int:9:int:0
+

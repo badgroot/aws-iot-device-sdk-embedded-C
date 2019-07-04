@@ -1,0 +1,145 @@
+Transient slot, check after closing
+0:int:0:int:0:exp:0:hex:"0123456789abcdef0123456789abcdef":exp:1
+
+Transient slot, check after destroying
+0:int:0:int:0:exp:0:hex:"0123456789abcdef0123456789abcdef":exp:2
+
+Transient slot, check after restart
+0:int:0:int:0:exp:0:hex:"0123456789abcdef0123456789abcdef":exp:3
+
+Persistent slot, check after closing
+1:exp:4:int:1:int:0:int:0:int:0:exp:0:hex:"0123456789abcdef0123456789abcdef":exp:1
+
+Persistent slot, check after destroying
+1:exp:4:int:1:int:0:int:0:int:0:exp:0:hex:"0123456789abcdef0123456789abcdef":exp:2
+
+Persistent slot, check after restart
+1:exp:4:int:1:int:0:int:0:int:0:exp:0:hex:"0123456789abcdef0123456789abcdef":exp:3
+
+Persistent slot: ECP keypair (ECDSA, exportable); close
+depends_on:0:1
+1:exp:4:int:1:exp:5:exp:6:int:0:exp:7:hex:"49c9a8c18c4b885638c431cf1df1c994131609b580d4fd43a0cab17db2f13eee":exp:1
+
+Persistent slot: ECP keypair (ECDSA, exportable); restart
+depends_on:0:1
+1:exp:4:int:1:exp:5:exp:6:int:0:exp:7:hex:"49c9a8c18c4b885638c431cf1df1c994131609b580d4fd43a0cab17db2f13eee":exp:3
+
+Persistent slot: ECP keypair (ECDH+ECDSA, exportable); close
+depends_on:2:3:0:1
+1:exp:4:int:1:exp:5:exp:8:exp:6:exp:7:hex:"49c9a8c18c4b885638c431cf1df1c994131609b580d4fd43a0cab17db2f13eee":exp:1
+
+Persistent slot: ECP keypair (ECDH+ECDSA, exportable); restart
+depends_on:2:3:0:1
+1:exp:4:int:1:exp:5:exp:8:exp:6:exp:7:hex:"49c9a8c18c4b885638c431cf1df1c994131609b580d4fd43a0cab17db2f13eee":exp:3
+
+Attempt to overwrite: close before
+2:exp:4:int:1:exp:9
+
+Attempt to overwrite: close after
+2:exp:4:int:1:exp:10
+
+Attempt to overwrite: keep open
+2:exp:4:int:1:exp:11
+
+Open failure: invalid identifier (0)
+depends_on:4
+3:exp:4:int:0:exp:12
+
+Open failure: invalid identifier (random seed UID)
+depends_on:4
+3:exp:4:exp:13:exp:12
+
+Open failure: non-existent identifier
+depends_on:4
+3:exp:4:int:1:exp:14
+
+Open failure: volatile lifetime
+3:exp:15:int:1:exp:12
+
+Open failure: invalid lifetime
+3:int:0x7fffffff:int:0:exp:12
+
+Create failure: volatile lifetime
+4:exp:15:int:1:exp:12
+
+Create failure: invalid lifetime
+4:int:0x7fffffff:int:0:exp:12
+
+Create failure: invalid key id (0)
+depends_on:4
+4:exp:4:int:0:exp:12
+
+Create failure: invalid key id (random seed UID)
+depends_on:4
+4:exp:4:exp:13:exp:12
+
+Open not supported
+depends_on:5
+3:exp:4:int:1:exp:16
+
+Create not supported
+depends_on:5
+4:exp:4:int:1:exp:16
+
+Copy volatile to volatile
+5:exp:15:int:0:exp:17:int:0:int:0:exp:0:hex:"4142434445":exp:15:int:0:exp:17:int:0:int:0:exp:17:int:0:int:0
+
+Copy volatile to persistent
+depends_on:4
+5:exp:15:int:0:exp:17:int:0:int:0:exp:0:hex:"4142434445":exp:4:int:1:exp:17:int:0:int:0:exp:17:int:0:int:0
+
+Copy persistent to volatile
+depends_on:4
+5:exp:4:int:1:exp:17:int:0:int:0:exp:0:hex:"4142434445":exp:15:int:0:exp:17:int:0:int:0:exp:17:int:0:int:0
+
+Copy persistent to persistent
+depends_on:4
+5:exp:4:int:1:exp:17:int:0:int:0:exp:0:hex:"4142434445":exp:4:int:2:exp:17:int:0:int:0:exp:17:int:0:int:0
+
+Copy persistent to persistent with enrollment algorithm
+depends_on:4:6:7:8
+5:exp:4:int:1:exp:17:exp:18:exp:19:exp:20:hex:"404142434445464748494a4b4c4d4e4f":exp:4:int:2:exp:17:exp:18:exp:19:exp:17:exp:18:exp:19
+
+Copy empty volatile to volatile
+6:exp:15:int:0:exp:17:int:0:exp:15:int:0:exp:17:int:0
+
+Copy empty volatile to persistent
+depends_on:4
+6:exp:15:int:0:exp:17:int:0:exp:4:int:1:exp:17:int:0
+
+Copy empty persistent to volatile
+depends_on:4
+6:exp:4:int:1:exp:17:int:0:exp:15:int:0:exp:17:int:0
+
+Copy empty persistent to persistent
+depends_on:4
+6:exp:4:int:1:exp:17:int:0:exp:4:int:2:exp:17:int:0
+
+Copy volatile to occupied volatile
+7:exp:15:int:0:exp:17:exp:18:exp:20:hex:"404142434445464748494a4b4c4d4e4f":exp:15:int:0:exp:17:exp:19:exp:20:hex:"606162636465666768696a6b6c6d6e6f"
+
+Copy volatile to occupied persistent
+depends_on:4
+7:exp:15:int:0:exp:17:exp:18:exp:20:hex:"404142434445464748494a4b4c4d4e4f":exp:4:int:2:exp:17:exp:19:exp:20:hex:"606162636465666768696a6b6c6d6e6f"
+
+Copy persistent to occupied volatile
+depends_on:4
+7:exp:4:int:1:exp:17:exp:18:exp:20:hex:"404142434445464748494a4b4c4d4e4f":exp:15:int:0:exp:17:exp:19:exp:20:hex:"606162636465666768696a6b6c6d6e6f"
+
+Copy persistent to occupied persistent
+depends_on:4
+7:exp:4:int:1:exp:17:exp:18:exp:20:hex:"404142434445464748494a4b4c4d4e4f":exp:4:int:2:exp:17:exp:19:exp:20:hex:"606162636465666768696a6b6c6d6e6f"
+
+Copy volatile to itself
+8:exp:15:int:0:exp:17:exp:18:exp:20:hex:"404142434445464748494a4b4c4d4e4f"
+
+Copy persistent to itself
+depends_on:4
+8:exp:15:int:0:exp:17:exp:18:exp:20:hex:"404142434445464748494a4b4c4d4e4f"
+
+Close/destroy invalid handle
+9
+
+Open many transient handles
+10:int:42
+
